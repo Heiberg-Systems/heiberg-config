@@ -65,7 +65,33 @@ return {
           sourceMaps = true,
         },
       }
-      dap.configurations.typescript = dap.configurations.javascript
+      -- Deep copy so inserting into one table doesn't bleed into the other
+      dap.configurations.typescript = vim.deepcopy(dap.configurations.javascript)
+
+      -- Docker remote attach for Next.js frontends
+      -- Start with: docker compose -f docker-compose.yml -f docker-compose.debug-frontend.yml up frontend
+      for _, proj in ipairs({
+        { name = "eating-plan",  path = "eating-plan/app/frontend",  port = 9229 },
+        { name = "workout-plan", path = "workout-plan/app/frontend", port = 9230 },
+      }) do
+        local cfg = {
+          type = "pwa-node",
+          request = "attach",
+          name = "Docker: " .. proj.name .. " frontend",
+          address = "127.0.0.1",
+          port = proj.port,
+          localRoot = vim.fn.expand("~/Development/heiberg-systems/" .. proj.path),
+          remoteRoot = "/app",
+          sourceMaps = true,
+          skipFiles = { "<node_internals>/**" },
+          resolveSourceMapLocations = {
+            "${workspaceFolder}/**",
+            "!**/node_modules/**",
+          },
+        }
+        table.insert(dap.configurations.javascript, cfg)
+        table.insert(dap.configurations.typescript, cfg)
+      end
 
       -- Navigation Mappings
       vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue" })

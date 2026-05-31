@@ -20,6 +20,12 @@ prepend_keymap = [
   { on = "<C-h>", run = "shell 'yazi-git-diff %h' --block", desc = "Git diff hovered file between commits (fzf)" },
 
   # View hovered file in Chrome
-  { on = "b", run = "shell 'google-chrome \"%h\"' --orphan", desc = "Open in Chrome" },
+  { on = "b", run = "shell 'gio open %h' --orphan", desc = "Open in Chrome" },
+
+  # Python debug: hover a backend .py file, Ctrl+P starts the debug container and opens nvim
+  { on = "<C-p>", run = "shell 'yazi-debug-python %h' --block", desc = "Python: debug hovered file in Docker (debugpy + nvim-dap)" },
+
+  # JS/TS debug: hover a frontend .ts/.tsx file, Ctrl+J starts the debug container and opens nvim
+  { on = "<C-j>", run = "shell 'yazi-debug-js %h' --block", desc = "JS/TS: debug hovered file in Docker (Node --inspect + nvim-dap)" },
 ]
 
