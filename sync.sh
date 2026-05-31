@@ -21,7 +21,7 @@ cp ~/.local/bin/yazi-git-diff      "$REPO/.local/bin/"
 
 cd "$REPO"
 
-if git diff --quiet && git diff --cached --quiet; then
+if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
   echo "Nothing changed."
   exit 0
 fi
