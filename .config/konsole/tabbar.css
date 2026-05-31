@@ -1,15 +1,29 @@
-QTabBar::tab:selected {
-    background: #3B82F6;
-    color: #F8FAFC;
-    font-weight: 600;
+QTabBar {
+    background-color: #0F172A;
+    border: none;
+    qproperty-drawBase: 0;
 }
 
-QTabBar::tab:!selected {
-    background: #1E293B;
+QTabBar::tab {
+    padding: 5px 16px;
+    margin: 0px;
+    border: none;
+    border-right: 1px solid #334155;
+    border-top: 3px solid transparent;
+    background-color: #1E293B;
     color: #94A3B8;
+    min-width: 60px;
+}
+
+QTabBar::tab:selected {
+    background-color: #3B82F6;
+    color: #F8FAFC;
+    font-weight: 600;
+    border-right: 1px solid #2563EB;
+    border-top: 3px solid #F8FAFC;
 }
 
 QTabBar::tab:!selected:hover {
-    background: #334155;
+    background-color: #334155;
     color: #F8FAFC;
 }
