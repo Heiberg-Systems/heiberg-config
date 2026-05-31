@@ -1,0 +1,29 @@
+
+[git]
+show_ignored = "show"
+
+[opener]
+browser = [
+    { run = 'google-chrome "$@"', desc = "Chrome", orphan = true },
+]
+editor = [
+    { run = 'nvim "$@"', block = true, desc = "Neovim" },
+]
+pdf = [
+    { run = 'okular "$@"', desc = "Okular", orphan = true },
+    { run = 'google-chrome "$@"', desc = "Chrome", orphan = true },
+]
+
+[open]
+prepend_rules = [
+    { url = "*.md",  use = ["editor", "browser"] },
+    { url = "*.pdf", use = ["pdf"] },
+]
+
+[plugin]
+prepend_previewers = [
+    { mime = "application/pdf", run = "pdf" },
+]
+
+[mgr]
+ratio = [0, 2, 6]   # parent / current / preview widths (out of 8)

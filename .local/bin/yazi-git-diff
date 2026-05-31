@@ -1,0 +1,45 @@
+#!/bin/bash
+# Diff a file between git commits from within Yazi.
+# Usage: yazi-git-diff <absolute-file-path>
+#
+# Select 1 commit → nvim -d (that commit vs working tree)
+# Select 2 commits → nvim -d (commit A vs commit B)
+# Tab to mark multiple selections in fzf.
+
+FILE="$1"
+
+GIT_ROOT=$(git -C "$(dirname "$FILE")" rev-parse --show-toplevel 2>/dev/null)
+if [[ -z "$GIT_ROOT" ]]; then
+    echo "Not inside a git repository." && sleep 2; exit 1
+fi
+
+REL_PATH=$(realpath --relative-to="$GIT_ROOT" "$FILE")
+
+SELECTED=$(
+    git -C "$GIT_ROOT" log --oneline -- "$REL_PATH" \
+    | fzf --multi --height=60% \
+          --header="Tab=select  Enter=confirm  (1 commit: vs worktree  |  2 commits: between them)" \
+          --preview="git -C '$GIT_ROOT' show {1}:'$REL_PATH' 2>/dev/null" \
+          --preview-window=right:60%
+)
+
+[[ -z "$SELECTED" ]] && exit 0
+
+mapfile -t SHAS < <(awk '{print $1}' <<< "$SELECTED")
+EXT="${FILE##*.}"
+
+if [[ ${#SHAS[@]} -eq 1 ]]; then
+    TMP=$(mktemp "/tmp/git-${SHAS[0]:0:7}-XXXX.$EXT")
+    git -C "$GIT_ROOT" show "${SHAS[0]}:$REL_PATH" > "$TMP" 2>/dev/null
+    nvim -d "$TMP" "$FILE"
+    rm -f "$TMP"
+elif [[ ${#SHAS[@]} -eq 2 ]]; then
+    TMP1=$(mktemp "/tmp/git-${SHAS[0]:0:7}-XXXX.$EXT")
+    TMP2=$(mktemp "/tmp/git-${SHAS[1]:0:7}-XXXX.$EXT")
+    git -C "$GIT_ROOT" show "${SHAS[0]}:$REL_PATH" > "$TMP1" 2>/dev/null
+    git -C "$GIT_ROOT" show "${SHAS[1]}:$REL_PATH" > "$TMP2" 2>/dev/null
+    nvim -d "$TMP1" "$TMP2"
+    rm -f "$TMP1" "$TMP2"
+else
+    echo "Select 1 or 2 commits." && sleep 2
+fi

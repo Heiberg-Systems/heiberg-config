@@ -1,0 +1,25 @@
+# File: ~/.config/yazi/keymap.toml
+
+[mgr]
+prepend_keymap = [
+  { on = "<C-s>", run = "shell 'bash' --block --confirm", desc = "Open shell here" },
+
+  # Local diff: Space-select file(s), hover the other, press Ctrl+D
+  # Supports 2–8 files; nvim -d shows side-by-side with syntax highlighting
+  { on = "<C-d>", run = "shell 'nvim -d %s %h' --block", desc = "Visual diff selected vs hovered (nvim -d)" },
+
+  # Git diff: hover a tracked file, press Ctrl+G to see working-tree changes vs HEAD
+  { on = "<C-g>", run = "shell 'git diff HEAD -- %h | nvim -R -' --block", desc = "Git diff hovered file vs HEAD" },
+
+  # Git diff staged: hover a file, press Alt+G to see staged (index) changes vs HEAD
+  { on = "<A-g>", run = "shell 'git diff --staged -- %h | nvim -R -' --block", desc = "Git diff hovered file (staged vs HEAD)" },
+
+  # Git commit diff: hover a file, press Ctrl+H to pick 1 or 2 commits via fzf
+  # 1 commit → nvim -d that version vs working tree
+  # 2 commits (Tab to mark) → nvim -d between them
+  { on = "<C-h>", run = "shell 'yazi-git-diff %h' --block", desc = "Git diff hovered file between commits (fzf)" },
+
+  # View hovered file in Chrome
+  { on = "b", run = "shell 'google-chrome \"%h\"' --orphan", desc = "Open in Chrome" },
+]
+

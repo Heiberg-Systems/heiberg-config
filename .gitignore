@@ -1,0 +1,5 @@
+# nvim plugin lockfile (auto-generated)
+.config/nvim/lazy-lock.json
+
+# yazi plugin binaries / cache
+.config/yazi/plugins/preview.yazi/
