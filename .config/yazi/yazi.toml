@@ -4,14 +4,14 @@ show_ignored = "show"
 
 [opener]
 browser = [
-    { run = 'google-chrome "$@"', desc = "Chrome", orphan = true },
+    { run = '/home/jako/.local/bin/yazi-open-browser "$@"', desc = "Chrome", block = true },
 ]
 editor = [
     { run = 'nvim "$@"', block = true, desc = "Neovim" },
 ]
 pdf = [
     { run = 'okular "$@"', desc = "Okular", orphan = true },
-    { run = 'google-chrome "$@"', desc = "Chrome", orphan = true },
+    { run = '/home/jako/.local/bin/yazi-open-browser "$@"', desc = "Chrome", block = true },
 ]
 
 [open]
