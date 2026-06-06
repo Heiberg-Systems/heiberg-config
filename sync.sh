@@ -24,6 +24,7 @@ cp ~/.local/bin/yazi-git-diff       "$REPO/.local/bin/"
 cp ~/.local/bin/tmux-workspace.sh   "$REPO/.local/bin/"
 
 cp ~/.tmux.conf "$REPO/.tmux.conf"
+cp ~/.bashrc    "$REPO/.bashrc"
 
 cd "$REPO"
 
