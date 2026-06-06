@@ -2,15 +2,8 @@
     "Orientation": "Horizontal",
     "Widgets": [
         {
-            "Columns": 89,
-            "Command": "bash -c 'echo -ne \"\\e]30;Sandbox\\a\"; clear; claude -r; exec bash'",
-            "Lines": 52,
-            "SessionRestoreId": 0,
-            "WorkingDirectory": "/home/jako/Development/heiberg-systems"
-        },
-        {
-            "Columns": 89,
-            "Command": "bash -c 'echo -ne \"\\e]30;Sandbox\\a\"; clear; yazi; exec bash'",
+            "Columns": 178,
+            "Command": "bash -c 'echo -ne \"\\e]30;Sandbox\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh sandbox /home/jako/Development/heiberg-systems'",
             "Lines": 52,
             "SessionRestoreId": 0,
             "WorkingDirectory": "/home/jako/Development/heiberg-systems"

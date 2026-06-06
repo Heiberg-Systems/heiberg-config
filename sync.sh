@@ -16,8 +16,14 @@ rsync -a --delete \
   --exclude='plugins/preview.yazi/' \
   ~/.config/yazi/       "$REPO/.config/yazi/"
 
-cp ~/.local/bin/heiberg-konsole.sh "$REPO/.local/bin/"
-cp ~/.local/bin/yazi-git-diff      "$REPO/.local/bin/"
+rsync -a --delete \
+  ~/.local/share/konsole/ "$REPO/.local/share/konsole/"
+
+cp ~/.local/bin/heiberg-konsole.sh  "$REPO/.local/bin/"
+cp ~/.local/bin/yazi-git-diff       "$REPO/.local/bin/"
+cp ~/.local/bin/tmux-workspace.sh   "$REPO/.local/bin/"
+
+cp ~/.tmux.conf "$REPO/.tmux.conf"
 
 cd "$REPO"
 

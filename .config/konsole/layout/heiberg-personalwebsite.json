@@ -2,15 +2,8 @@
     "Orientation": "Horizontal",
     "Widgets": [
         {
-            "Columns": 89,
-            "Command": "bash -c 'echo -ne \"\\e]30;Personal Website\\a\"; clear; claude -r; exec bash'",
-            "Lines": 52,
-            "SessionRestoreId": 0,
-            "WorkingDirectory": "/home/jako/Development/heiberg-systems/heiberg-co-za"
-        },
-        {
-            "Columns": 89,
-            "Command": "bash -c 'echo -ne \"\\e]30;Personal Website\\a\"; clear; yazi; exec bash'",
+            "Columns": 178,
+            "Command": "bash -c 'echo -ne \"\\e]30;Personal Website\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh personalwebsite /home/jako/Development/heiberg-systems/heiberg-co-za'",
             "Lines": 52,
             "SessionRestoreId": 0,
             "WorkingDirectory": "/home/jako/Development/heiberg-systems/heiberg-co-za"
