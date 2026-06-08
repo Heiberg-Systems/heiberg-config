@@ -19,10 +19,12 @@ rsync -a --delete \
 rsync -a --delete \
   "$REPO/.local/share/konsole/" ~/.local/share/konsole/
 
-cp "$REPO/.local/bin/heiberg-konsole.sh" ~/.local/bin/
-cp "$REPO/.local/bin/yazi-git-diff"      ~/.local/bin/
-cp "$REPO/.local/bin/tmux-workspace.sh"  ~/.local/bin/
-chmod +x ~/.local/bin/heiberg-konsole.sh ~/.local/bin/yazi-git-diff ~/.local/bin/tmux-workspace.sh
+cp "$REPO/.local/bin/heiberg-konsole.sh"  ~/.local/bin/
+cp "$REPO/.local/bin/yazi-git-diff"       ~/.local/bin/
+cp "$REPO/.local/bin/tmux-workspace.sh"   ~/.local/bin/
+cp "$REPO/.local/bin/tmux-sync-panes.sh"  ~/.local/bin/
+chmod +x ~/.local/bin/heiberg-konsole.sh ~/.local/bin/yazi-git-diff \
+         ~/.local/bin/tmux-workspace.sh ~/.local/bin/tmux-sync-panes.sh
 
 cp "$REPO/.tmux.conf" ~/.tmux.conf
 

@@ -3,10 +3,10 @@
     "Widgets": [
         {
             "Columns": 178,
-            "Command": "bash -c 'echo -ne \"\\e]30;17Peppertree\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh 17Peppertree /home/jako/Development/17peppertree'",
+            "Command": "bash -c 'echo -ne \"\\e]30;17 Peppertree\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh 17peppertree /home/jako/Development/heiberg-systems/17peppertree'",
             "Lines": 52,
             "SessionRestoreId": 0,
-            "WorkingDirectory": "/home/jako/Development/17peppertree"
+            "WorkingDirectory": "/home/jako/Development/heiberg-systems/17peppertree"
         }
     ]
 }
