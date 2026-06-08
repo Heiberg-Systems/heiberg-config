@@ -1,4 +1,4 @@
 [General]
-Command=/home/jako/.local/bin/tmux-workspace.sh heiberg /home/jako/Development/17peppertree
+Command=bash -c 'printf "\e]30;Heiberg\a"; exec /home/jako/.local/bin/tmux-workspace.sh heiberg /home/jako/Development/17peppertree'
 Name=Workspace-Heiberg
 Parent=Jako se Profile
