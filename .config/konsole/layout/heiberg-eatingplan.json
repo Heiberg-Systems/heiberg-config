@@ -3,10 +3,10 @@
     "Widgets": [
         {
             "Columns": 178,
-            "Command": "bash -c 'echo -ne \"\\e]30;Eating Plan\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh eatingplan /home/jako/Development/heiberg-systems/eating-plan'",
+            "Command": "bash -c 'echo -ne \"\\e]30;Eating Plan\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh eatingplan /home/jako/Development/heiberg-systems/nourish'",
             "Lines": 52,
             "SessionRestoreId": 0,
-            "WorkingDirectory": "/home/jako/Development/heiberg-systems/eating-plan"
+            "WorkingDirectory": "/home/jako/Development/heiberg-systems/nourish"
         }
     ]
 }
