@@ -3,7 +3,7 @@
     "Widgets": [
         {
             "Columns": 178,
-            "Command": "bash -c 'echo -ne \"\\e]30;Workout Plan\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh workoutplan /home/jako/Development/heiberg-systems/forge'",
+            "Command": "bash -c 'echo -ne \"\\e]30;Forge\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh workoutplan /home/jako/Development/heiberg-systems/forge'",
             "Lines": 52,
             "SessionRestoreId": 0,
             "WorkingDirectory": "/home/jako/Development/heiberg-systems/forge"

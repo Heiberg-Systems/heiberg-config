@@ -3,7 +3,7 @@ profile: Workspace-Sandbox
 
 ---
 
-title: Eating Plan
+title: Nourish
 profile: Workspace-EatingPlan
 
 ---
@@ -23,12 +23,12 @@ profile: Workspace-IdP
 
 ---
 
-title: Infrastructure
+title: Persistence
 profile: Workspace-Infrastructure
 
 ---
 
-title: Workout Plan
+title: Forge
 profile: Workspace-WorkoutPlan
 
 ---
