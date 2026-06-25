@@ -1,0 +1,12 @@
+{
+    "Orientation": "Horizontal",
+    "Widgets": [
+        {
+            "Columns": 178,
+            "Command": "bash -c 'echo -ne \"\\e]30;Tally\\a\"; exec /home/jako/.local/bin/tmux-workspace.sh tally /home/jako/Development/heiberg-systems/tally'",
+            "Lines": 52,
+            "SessionRestoreId": 0,
+            "WorkingDirectory": "/home/jako/Development/heiberg-systems/tally"
+        }
+    ]
+}
