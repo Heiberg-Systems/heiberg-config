@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 LAYOUT_DIR="$HOME/.config/konsole/layout"
-LAYOUTS=(heiberg-sandbox.json heiberg-eatingplan.json heiberg-personalwebsite.json heiberg-systemswebsite.json heiberg-idp.json heiberg-infrastructure.json heiberg-workoutplan.json heiberg-tally.json heiberg.json)
+LAYOUTS=(heiberg-sandbox.json heiberg-eatingplan.json heiberg-personalwebsite.json heiberg-systemswebsite.json heiberg-idp.json heiberg-infrastructure.json heiberg-workoutplan.json heiberg-tally.json heiberg-stay.json heiberg.json)
 
 BEFORE_IDS=$(wmctrl -l -x 2>/dev/null | grep -i 'konsole' | awk '{print $1}' | sort)
 
