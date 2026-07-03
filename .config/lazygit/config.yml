@@ -1,0 +1,13 @@
+gui:
+  theme:
+    # Default selectedLineBgColor is bright blue, which leaves light text
+    # nearly unreadable. Use a dark selection band with bright default text.
+    selectedLineBgColor:
+      - "#3b4261"
+    defaultFgColor:
+      - "#c0caf5"
+    activeBorderColor:
+      - "#7aa2f7"
+      - bold
+    inactiveBorderColor:
+      - "#565f89"

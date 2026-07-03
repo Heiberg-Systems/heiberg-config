@@ -1,0 +1,19 @@
+# Overrides layered on top of Yazi's default theme.
+# Default `hovered = { reversed = true }` inverts colors, which makes the
+# cursor row's already-colored text (e.g. blue directories) low-contrast.
+# Force a solid dark selection band with bright text instead.
+[mgr]
+hovered         = { fg = "#c0caf5", bg = "#3b4261", bold = true }
+preview_hovered = { bg = "#3b4261", bold = true }
+
+# Status-bar mode pills (the "NOR"/"Bot" segments on both ends of the bottom
+# bar). Default `*_main` has a bare blue bg with light terminal text, which is
+# the washed-out blue highlight. Use dark text on a bright accent pill, and
+# match the `*_alt` companion segment to the cursor band (#3b4261).
+[mode]
+normal_main = { fg = "#1a1b26", bg = "#7aa2f7", bold = true }
+normal_alt  = { fg = "#7aa2f7", bg = "#3b4261" }
+select_main = { fg = "#1a1b26", bg = "#bb9af7", bold = true }
+select_alt  = { fg = "#bb9af7", bg = "#3b4261" }
+unset_main  = { fg = "#1a1b26", bg = "#f7768e", bold = true }
+unset_alt   = { fg = "#f7768e", bg = "#3b4261" }

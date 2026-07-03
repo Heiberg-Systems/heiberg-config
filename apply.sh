@@ -17,6 +17,9 @@ rsync -a --delete \
   "$REPO/.config/yazi/"       ~/.config/yazi/
 
 rsync -a --delete \
+  "$REPO/.config/lazygit/"    ~/.config/lazygit/
+
+rsync -a --delete \
   "$REPO/.local/share/konsole/" ~/.local/share/konsole/
 
 cp "$REPO/.local/bin/heiberg-konsole.sh"  ~/.local/bin/
