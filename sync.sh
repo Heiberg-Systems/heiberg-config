@@ -19,6 +19,12 @@ rsync -a --delete \
 rsync -a --delete \
   ~/.local/share/konsole/ "$REPO/.local/share/konsole/"
 
+# Claude Code project memory (per-project auto-memory store).
+# settings.local.json is globally gitignored, so it won't be committed.
+rsync -a --delete \
+  ~/.claude/projects/-home-jako-Development-heiberg-systems/memory/ \
+  "$REPO/.claude/projects/-home-jako-Development-heiberg-systems/memory/"
+
 cp ~/.local/bin/heiberg-konsole.sh  "$REPO/.local/bin/"
 cp ~/.local/bin/yazi-git-diff       "$REPO/.local/bin/"
 cp ~/.local/bin/tmux-workspace.sh   "$REPO/.local/bin/"
